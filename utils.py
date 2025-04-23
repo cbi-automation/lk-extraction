@@ -45,13 +45,6 @@ def find_paragraphs_by_marker_pairs(text, marker_pairs, kuartal):
 
     return results
 
-# Mapping marker ke fungsi
-marker_to_function = {
-    "marker1": "find_satuan",
-    "marker2": "find_nilai_tukar",
-    "marker3": "find_suku_bunga"
-}
-
 def process_all_markers(text, kuartal, marker_config):
     all_output = {}
 

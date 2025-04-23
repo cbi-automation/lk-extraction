@@ -7,6 +7,12 @@ marker_config = {
     "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "kenaikan/ penurunan")]
 }
 
+# Mapping marker ke fungsi
+marker_to_function = {
+    "marker1": "find_satuan",
+    "marker2": "find_nilai_tukar"
+}
+
 def find_satuan(text,marker_pairs,kuartal):
     results = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
     return {
