@@ -1,4 +1,3 @@
-from utils import find_paragraphs_by_marker_pairs
 import re
 
 
