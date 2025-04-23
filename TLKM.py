@@ -7,25 +7,44 @@ marker_config = {
     "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "kenaikan/ penurunan")]
 }
 
-def find_satuan(text):
-    results = find_paragraphs_by_marker_pairs(text, marker_pairs, kuartal)
+def find_satuan(text,marker_pairs,kuartal):
+    results = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
     return {
         "satuan": results[0]["snippet"] if results else "-"
     }
 
-def find_nilai_tukar(marker_pairs, text, kuartal):
-     # Gabungkan newline jadi spasi agar regex lebih fleksibel
-    teks_bersih = text.replace("\n", " ")
+def find_nilai_tukar(text, marker_pairs,kuartal):
+    # Gabungkan newline jadi spasi agar regex lebih fleksibel
+    teks_kotor = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
+    teks_bersih = teks_kotor.replace("\n", " ")
 
-    # Tangkap pola persen di sekitar kata seperti melemah/menguat, strengthened, etc.
-    persen_match = re.search(r"(?:melemah/menguat|weakened|strengthened).*?(\d+%)", teks_bersih, re.IGNORECASE)
-    persen = persen_match.group(1) if persen_match else "Tidak ditemukan"
+    # Tangkap pola: mata uang + (penguatan X%) + angka (bisa negatif atau dalam tanda kurung)
+    pola = re.findall(r"(Dolar A\.S\.|Yen Jepang)\s+\(penguatan\s+(\d+%)\)\s+\(?(-?\d+)\)?", teks_bersih)
+
+    # Inisialisasi variabel hasil
+    perubahan_kurs_usd = None
+    perubahan_kurs_ypg = None
+    ekuitas_usd = None
+    ekuitas_ypg = None
+
+    for mata_uang, persen, nilai in pola:
+        # Cek apakah nilai aslinya ada dalam tanda kurung
+        match_kurung = re.search(r"\(\s*-?(\d+)\s*\)", text)
+        if match_kurung and match_kurung.group(0) == f"({nilai})":
+            nilai_bersih = -int(nilai.replace(",", ""))
+        else:
+            nilai_bersih = int(nilai.replace(",", ""))
+
+        if mata_uang == "Dolar A.S.":
+            perubahan_kurs_usd = persen
+            ekuitas_usd = nilai_bersih
+        elif mata_uang == "Yen Jepang":
+            perubahan_kurs_ypg = persen
+            ekuitas_ypg = nilai_bersih
 
     return {
         "Perubahan Kurs (USD)": perubahan_kurs_usd,
-        "Efek Penurunan terhadap rugi setelah pajak (USD)": rugi_turun_usd,
-        "Efek Kenaikan terhadap rugi setelah pajak (USD)": rugi_naik_usd,
         "Perubahan Kurs (YPG)": perubahan_kurs_ypg,
-        "Efek Penurunan terhadap rugi setelah pajak (YPG)": rugi_turun_ypg,
-        "Efek Kenaikan terhadap rugi setelah pajak (YPG)": rugi_naik_ypg,
+        "Ekuitas/ laba (rugi) (USD)": ekuitas_usd,
+        "Ekuitas/ laba (rugi) (YPG)": ekuitas_ypg,
     }

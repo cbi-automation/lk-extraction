@@ -70,3 +70,12 @@ def process_all_markers(text, kuartal, marker_config):
 
     return all_output
 
+# Fungsi untuk mengekstrak teks dari PDF
+def extract_text(file_path):
+    text = ""
+    with pdfplumber.open(file_path) as doc:
+        for page in doc.pages:
+            page_text = page.extract_text()
+            if page_text:
+                text += page_text + "\n"
+    return text
