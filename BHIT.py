@@ -3,8 +3,8 @@ import utils
 
 # Konfigurasi marker: marker_name -> (start_marker, end_marker)
 marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", "diakibatkan")]
+    "marker1": [("dinyatakan dalam", ")")],
+    "marker2": [("Analisis sensitivitas mata uang asing", "Dampak")]
 }
 
 # Mapping marker ke fungsi
@@ -21,15 +21,15 @@ def find_satuan(text,marker_pairs,kuartal):
 
 def find_nilai_tukar(text, marker_pairs,kuartal):
     # Gabungkan newline jadi spasi agar regex lebih fleksibel
-    # Aktifkan DOTALL agar .* bisa lewati newline
+    # Ambil persentase perubahan kurs (contoh: 1,0%)
     teks_kotor = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
     teks_bersih = teks_kotor.replace("\n", " ")
 
-    persen_match = re.search(r"sebesar.*?(\d+%)", teks_bersih, re.DOTALL)
-    persen = persen_match.group(1) if persen_match else "Tidak ditemukan"
+    persen_match = re.search(r"Penguatan\s*([\d.,]+%)", teks_bersih)
+    persen = persen_match.group(1) if persen_match else "N/A"
 
-    # Tangkap nilai Rp seperti Rp13.368 atau Rp13,368
-    rupiah_match = re.search(r"(?:lebih tinggi|lebih rendah|sebesar|would have been)[^Rp]*(Rp[\d.,]+)", teks_bersih, re.IGNORECASE)
+    # Ambil nilai dampak dalam Rupiah (dari baris Penguatan)
+    rupiah_match = re.search(r"Penguatan\s*[\d.,]+%\s*\(?([\d.,]+)\)?", teks_bersih)
     rupiah = rupiah_match.group(1) if rupiah_match else "Tidak ditemukan"
 
     return {
