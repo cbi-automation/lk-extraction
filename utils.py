@@ -58,25 +58,23 @@ marker_to_function = {
     "marker2": "find_nilai_tukar"
 }
 
+def create_emiten_instance(emiten_name: str) -> Company:
+    cls = globals().get(emiten_name)
+    if cls and issubclass(cls, Company):
+        return cls()
+    else:
+        print(f"[⚠️] Emiten '{emiten_name}' tidak ditemukan atau bukan turunan Company. Gunakan Company standar.")
+        return Company()
+
 def process_all_markers(text, kuartal, emiten):
-    company = Company()
+    company = create_emiten_instance(emiten)
     company.perusahaan = emiten
-    company.kuartal = kuartal  # set kuartal langsung
+    company.kuartal = kuartal
+    
+    print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
     marker_config = load_emiten_config(emiten)
-
-    for marker_name, marker_pairs in marker_config.items():
-        function_name = marker_to_function.get(marker_name)
-        if not function_name:
-            continue
-
-        func = globals().get(function_name)
-        if not func:
-            print(f"[⚠️] Fungsi '{function_name}' tidak ditemukan.")
-            continue
-
-        # ⬇️ Fungsi sekarang juga menerima objek company yang akan di-update
-        func(text, marker_pairs, company, kuartal)
-
+    company.find_satuan(text,kuartal)
+    company.find_nilai_tukar(text,kuartal)
     return company
 
 # Fungsi untuk mengekstrak teks dari PDF
