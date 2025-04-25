@@ -1,5 +1,5 @@
 import re
-import utils
+from utils import*
 
 marker_config = {
     "marker1": [("Angka dalam tabel disajikan dalam", ",")],
