@@ -61,7 +61,8 @@ def process_all_markers(text, kuartal, emiten):
     company.perusahaan = emiten
     company.kuartal = kuartal  # set kuartal langsung
     print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
-    marker_config = load_marker_config(emiten)
+
+    marker_config, marker_to_function = load_emiten_config(emiten)
 
     for marker_name, marker_pairs in marker_config.items():
         function_name = marker_to_function.get(marker_name)
@@ -70,8 +71,13 @@ def process_all_markers(text, kuartal, emiten):
 
         func = globals().get(function_name)
         if not func:
-            print(f"[⚠️] Fungsi '{function_name}' tidak ditemukan.")
-            continue
+            # Coba ambil dari modul emiten juga
+            try:
+                emiten_module = importlib.import_module(emiten.upper())
+                func = getattr(emiten_module, function_name)
+            except AttributeError:
+                print(f"[⚠️] Fungsi '{function_name}' tidak ditemukan di modul {emiten}.")
+                continue
 
         # ⬇️ Fungsi sekarang juga menerima objek company yang akan di-update
         func(text, marker_pairs, company, kuartal)
@@ -125,3 +131,17 @@ def generate_company(doc: Optional[dict]) -> Company:
     for attr, source_key in field_map.items():
         data[attr] = get_str(doc.get(source_key)) if doc else "-"
     return Company(**data)
+    
+import importlib
+
+def load_emiten_config(emiten: str):
+    try:
+        module_name = emiten.upper()  # Misal: "TLKM"
+        module = importlib.import_module(module_name)
+        marker_config = getattr(module, "marker_config", {})
+        marker_to_function = getattr(module, "marker_to_function", {})
+        return marker_config, marker_to_function
+    except ModuleNotFoundError:
+        print(f"[❌] Modul untuk emiten '{emiten}' tidak ditemukan.")
+        return {}, {}
+
