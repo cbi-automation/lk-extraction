@@ -2,8 +2,8 @@ import re
 
 # Konfigurasi marker: marker_name -> (start_marker, end_marker)
 tlkm_marker = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("bunga mengambang", "Risiko mata uang asing")]
+    "marker1": [("Angka dalam tabel disajikan dalam", ",")],
+    "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "Risiko harga pasar")]
 }
 
 
