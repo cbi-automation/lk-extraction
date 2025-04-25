@@ -1,5 +1,6 @@
 import re
 import importlib
+from utils import Company
 
 class Emiten(Company):
     def __init__(self, name: str):

@@ -2,7 +2,7 @@ from dataclasses import dataclass, field  # Harus di atas
 import re
 import pdfplumber
 from typing import Dict, Optional
-from Emiten import *
+from Emiten import Emiten
 
 @dataclass
 class Company:
