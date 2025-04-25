@@ -1,6 +1,17 @@
 import re
 import pdfplumber
 
+@dataclass
+class Company:
+    kuartal: str = "-"
+    perusahaan: str = "-"
+    disajikan_dalam: str = "-"
+    efek_ekuitas: str = "-"
+    efek_penurunan_setelah_pajak: str = "-"
+    efek_kenaikan_setelah_pajak: str = "-"
+    ekuitas_usd: str = "-"
+    ekuitas_ypg: str = "-"
+    
 def normalize(text):
     return re.sub(r"\s+", " ", text.strip().lower())
 
@@ -76,17 +87,6 @@ def extract_text(file_path):
 
 from dataclasses import dataclass, field
 from typing import Dict, Optional
-
-@dataclass
-class Company:
-    kuartal: str = "-"
-    perusahaan: str = "-"
-    disajikan_dalam: str = "-"
-    efek_ekuitas: str = "-"
-    efek_penurunan_setelah_pajak: str = "-"
-    efek_kenaikan_setelah_pajak: str = "-"
-    ekuitas_usd: str = "-"
-    ekuitas_ypg: str = "-"
 
 
 # Mapping: atribut class -> nama key di dictionary input

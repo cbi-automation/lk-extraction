@@ -13,11 +13,10 @@ marker_to_function = {
     "marker2": "find_nilai_tukar"
 }
 
-def find_satuan(text,marker_pairs,kuartal):
+def find_satuan(text, marker_pairs, company: Company, kuartal: str):
     results = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
-    return {
-        "satuan": results[0]["snippet"] if results else "-"
-    }
+    company.disajikan_dalam = results
+
 
 def find_nilai_tukar(text, marker_pairs,kuartal):
     # Gabungkan newline jadi spasi agar regex lebih fleksibel
