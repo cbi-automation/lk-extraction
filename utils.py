@@ -59,13 +59,13 @@ marker_to_function = {
     "marker2": "find_nilai_tukar"
 }
 
-def create_emiten_instance(emiten_name: str) -> Company:
+def create_emiten_instance(emiten_name: str) -> Emiten:
     cls = globals().get(emiten_name)
-    if cls and issubclass(cls, Company):
+    if cls and issubclass(cls, Emiten):
         return cls()
     else:
-        print(f"[⚠️] Emiten '{emiten_name}' tidak ditemukan atau bukan turunan Company. Gunakan Company standar.")
-        return Company()
+        print(f"[⚠️] Emiten '{emiten_name}' tidak ditemukan atau bukan turunan Emiten. Gunakan Emiten standar.")
+        return Emiten()
 
 def process_all_markers(text, kuartal, emiten):
     company = create_emiten_instance(emiten)
