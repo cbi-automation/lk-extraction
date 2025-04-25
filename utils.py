@@ -1,5 +1,6 @@
 import re
 import pdfplumber
+from marker_config import*
 
 atribut_data = ["Kuartal","Ticker","Satuan","Perubahan kurs (USD)","Perubahan kurs (YPG)","Ekuitas/laba(rugi) (USD)","Ekuitas/laba(rugi) (YPG)"]
 
@@ -43,12 +44,17 @@ import importlib
 
 def load_marker_config(perusahaan: str):
     try:
-        module_name = perusahaan.lower()
-        mod = importlib.import_module(module_name)
-        return getattr(mod, "marker_config")
+        # Import file marker_config.py
+        mod = importlib.import_module("marker_config")
+        
+        # Nama variabel di dalam file marker_config, seperti: tlkm_marker_config
+        var_name = f"{perusahaan.lower()}_marker_config"
+        
+        # Ambil variabel tersebut dari modul
+        return getattr(mod, var_name)
+    
     except (ModuleNotFoundError, AttributeError) as e:
         raise ValueError(f"❌ Marker config untuk perusahaan '{perusahaan}' tidak ditemukan: {e}")
-
 
 # Mapping marker ke fungsi
 marker_to_function = {
@@ -62,7 +68,7 @@ def process_all_markers(text, kuartal, emiten):
     company.kuartal = kuartal  # set kuartal langsung
     print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
 
-    marker_config, marker_to_function = load_emiten_config(emiten)
+    marker_config = load_emiten_config(emiten)
 
     for marker_name, marker_pairs in marker_config.items():
         function_name = marker_to_function.get(marker_name)
@@ -131,7 +137,7 @@ def generate_company(doc: Optional[dict]) -> Company:
     for attr, source_key in field_map.items():
         data[attr] = get_str(doc.get(source_key)) if doc else "-"
     return Company(**data)
-    
+
 import importlib
 
 def load_emiten_config(emiten: str):
