@@ -1,5 +1,4 @@
 import re
-from utils import *
 
 # Konfigurasi marker: marker_name -> (start_marker, end_marker)
 tlkm_marker = {
