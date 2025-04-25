@@ -1,10 +1,9 @@
 import re
 import utils
 
-# Konfigurasi marker: marker_name -> (start_marker, end_marker)
 marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "kenaikan/ penurunan")]
+    "marker1": [("Angka dalam tabel disajikan dalam", ",")],
+    "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "Risiko harga pasar")]
 }
 
 # Mapping marker ke fungsi
@@ -13,15 +12,21 @@ marker_to_function = {
     "marker2": "find_nilai_tukar"
 }
 
-def find_satuan(text,marker_pairs,kuartal):
-    results = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
-    return {
-        "satuan": results[0]["snippet"] if results else "-"
-    }
+def normalize(text):
+    return re.sub(r"\s+", " ", text.strip().lower())
 
-def find_nilai_tukar(text, marker_pairs,kuartal):
+def find_satuan(text, marker_pairs, company: Company, kuartal: str):
+    results = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
+    company.disajikan_dalam = results
+
+def find_nilai_tukar(text, marker_pairs, company: Company, kuartal: str):
     # Gabungkan newline jadi spasi agar regex lebih fleksibel
-    teks_kotor = find_paragraphs_by_marker_pairs(text, marker_pairs,kuartal)
+    teks_kotor = find_paragraphs_by_marker_pairs(text, marker_pairs, kuartal)
+
+    # Cek apakah teks_kotor adalah list, dan gabungkan menjadi string jika iya
+    if isinstance(teks_kotor, list):
+        teks_kotor = " ".join(teks_kotor)
+
     teks_bersih = teks_kotor.replace("\n", " ")
 
     # Tangkap pola: mata uang + (penguatan X%) + angka (bisa negatif atau dalam tanda kurung)
@@ -48,9 +53,7 @@ def find_nilai_tukar(text, marker_pairs,kuartal):
             perubahan_kurs_ypg = persen
             ekuitas_ypg = nilai_bersih
 
-    return {
-        "Perubahan Kurs (USD)": perubahan_kurs_usd,
-        "Perubahan Kurs (YPG)": perubahan_kurs_ypg,
-        "Ekuitas/ laba (rugi) (USD)": ekuitas_usd,
-        "Ekuitas/ laba (rugi) (YPG)": ekuitas_ypg,
-    }
+    company.perubahan_kurs_usd = perubahan_kurs_usd
+    company.perubahan_kurs_ypg = perubahan_kurs_ypg
+    company.ekuitas_usd = ekuitas_usd
+    company.ekuitas_ypg = ekuitas_ypg
