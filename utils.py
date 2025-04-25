@@ -1,8 +1,6 @@
-
+from dataclasses import dataclass, field  # Harus di atas
 import re
 import pdfplumber
-
-from dataclasses import dataclass, field
 from typing import Dict, Optional
 
 @dataclass
