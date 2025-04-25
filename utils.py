@@ -1,6 +1,9 @@
+
 import re
 import pdfplumber
 
+from dataclasses import dataclass, field
+from typing import Dict, Optional
 
 @dataclass
 class Company:
@@ -87,9 +90,6 @@ def extract_text(file_path):
                 text += page_text + "\n"
     return text
 
-
-from dataclasses import dataclass, field
-from typing import Dict, Optional
 
 # Mapping: atribut class -> nama key di dictionary input
 field_map: Dict[str, str] = {
