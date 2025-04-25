@@ -42,6 +42,11 @@ def find_paragraphs_by_marker_pairs(text, marker_pairs, kuartal="2022"):
 
 import importlib
 
+tlkm_marker_config = {
+    "marker1": [("Angka dalam tabel disajikan dalam", ",")],
+    "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "Risiko harga pasar")]
+}
+
 def load_marker_config(perusahaan: str):
     try:
         # Import file marker_config.py
@@ -51,7 +56,7 @@ def load_marker_config(perusahaan: str):
         var_name = f"{perusahaan.lower()}_marker_config"
         
         # Ambil variabel tersebut dari modul
-        return getattr(mod, var_name)
+        return var_name
     
     except (ModuleNotFoundError, AttributeError) as e:
         raise ValueError(f"❌ Marker config untuk perusahaan '{perusahaan}' tidak ditemukan: {e}")
@@ -61,6 +66,7 @@ marker_to_function = {
     "marker1": "find_satuan",
     "marker2": "find_nilai_tukar"
 }
+
 
 def process_all_markers(text, kuartal, emiten):
     company = Company()
