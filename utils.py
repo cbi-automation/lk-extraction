@@ -39,6 +39,17 @@ def find_paragraphs_by_marker_pairs(text, marker_pairs, kuartal="2022"):
 
     return snippet  # Kembalikan string langsung, bukan list atau dict
 
+import importlib
+
+def load_marker_config(perusahaan: str):
+    try:
+        module_name = perusahaan.lower()
+        mod = importlib.import_module(module_name)
+        return getattr(mod, "marker_config")
+    except (ModuleNotFoundError, AttributeError) as e:
+        raise ValueError(f"❌ Marker config untuk perusahaan '{perusahaan}' tidak ditemukan: {e}")
+
+
 # Mapping marker ke fungsi
 marker_to_function = {
     "marker1": "find_satuan",
@@ -50,7 +61,7 @@ def process_all_markers(text, kuartal, emiten):
     company.perusahaan = emiten
     company.kuartal = kuartal  # set kuartal langsung
     print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
-
+    marker_config = load_marker_config(emiten)
 
     for marker_name, marker_pairs in marker_config.items():
         function_name = marker_to_function.get(marker_name)
