@@ -91,10 +91,6 @@ def extract_text(file_path):
 from dataclasses import dataclass, field
 from typing import Dict, Optional
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9a820961fa23630bf3bbfa6d6541e6ff3724a9b5
 # Mapping: atribut class -> nama key di dictionary input
 field_map: Dict[str, str] = {
     "kuartal": "Kuartal",
