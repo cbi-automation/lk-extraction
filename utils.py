@@ -1,8 +1,5 @@
 import re
 import pdfplumber
-from marker_config import*
-
-atribut_data = ["Kuartal","Ticker","Satuan","Perubahan kurs (USD)","Perubahan kurs (YPG)","Ekuitas/laba(rugi) (USD)","Ekuitas/laba(rugi) (YPG)"]
 
 def normalize(text):
     return re.sub(r"\s+", " ", text.strip().lower())
@@ -49,13 +46,7 @@ tlkm_marker_config = {
 
 def load_marker_config(perusahaan: str):
     try:
-        # Import file marker_config.py
-        mod = importlib.import_module("marker_config")
-        
-        # Nama variabel di dalam file marker_config, seperti: tlkm_marker_config
         var_name = f"{perusahaan.lower()}_marker_config"
-        
-        # Ambil variabel tersebut dari modul
         return var_name
     
     except (ModuleNotFoundError, AttributeError) as e:
@@ -67,13 +58,10 @@ marker_to_function = {
     "marker2": "find_nilai_tukar"
 }
 
-
 def process_all_markers(text, kuartal, emiten):
     company = Company()
     company.perusahaan = emiten
     company.kuartal = kuartal  # set kuartal langsung
-    print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
-
     marker_config = load_emiten_config(emiten)
 
     for marker_name, marker_pairs in marker_config.items():
@@ -83,13 +71,8 @@ def process_all_markers(text, kuartal, emiten):
 
         func = globals().get(function_name)
         if not func:
-            # Coba ambil dari modul emiten juga
-            try:
-                emiten_module = importlib.import_module(emiten.upper())
-                func = getattr(emiten_module, function_name)
-            except AttributeError:
-                print(f"[⚠️] Fungsi '{function_name}' tidak ditemukan di modul {emiten}.")
-                continue
+            print(f"[⚠️] Fungsi '{function_name}' tidak ditemukan.")
+            continue
 
         # ⬇️ Fungsi sekarang juga menerima objek company yang akan di-update
         func(text, marker_pairs, company, kuartal)
