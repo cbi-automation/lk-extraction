@@ -1,5 +1,6 @@
 import re
 import importlib
+from abc import ABC, abstractmethod
 from utils import Company
 
 class Emiten(Company):
