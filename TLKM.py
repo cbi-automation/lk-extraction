@@ -11,7 +11,7 @@ class TLKM(Emiten):
     def __init__(self):
         super().__init__("TLKM")
 
-    def find_satuan(self, text, marker_pairs, company, kuartal):
+    def find_satuan(self, text, company, kuartal):
         marker_pairs =[("Angka dalam tabel disajikan dalam", ",")]
         """Contoh fungsi untuk menangani marker 'satuan'."""
         results = self.find_paragraphs_by_marker_pairs(text, marker_pairs, kuartal)
