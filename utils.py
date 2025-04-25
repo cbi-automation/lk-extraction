@@ -72,7 +72,6 @@ def process_all_markers(text, kuartal, emiten):
     company.kuartal = kuartal
     
     print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
-    marker_config = load_emiten_config(emiten)
     company.find_satuan(text,kuartal)
     company.find_nilai_tukar(text,kuartal)
     return company
