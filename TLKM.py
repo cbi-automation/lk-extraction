@@ -1,5 +1,5 @@
 import re
-from utils import Emiten
+from utils import *
 
 class TLKM(Emiten):
      
