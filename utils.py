@@ -125,7 +125,3 @@ def generate_company(doc: Optional[dict]) -> Company:
     for attr, source_key in field_map.items():
         data[attr] = get_str(doc.get(source_key)) if doc else "-"
     return Company(**data)
-
-import json
-
-company = Company()
