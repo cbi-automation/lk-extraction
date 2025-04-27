@@ -225,3 +225,70 @@ KLBF_marker_config = {
     "marker2": [("melemah/menguat", "miliar")],
     "marker3": [("Risiko tingkat suku bunga", "miliar")],
 }
+
+
+TLKM_marker_config = {
+    "marker1": [("Angka dalam tabel disajikan dalam", ",")],
+    "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "Risiko harga pasar")],
+    "marker3": [("Pergerakan tingkat suku bunga diawasi", "Risiko kredit")],
+}
+
+INDF_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("melemah", "keuntungan/kerugian")],
+    "marker3": [("-", "-")],
+}
+
+INKP_marker_config = {
+    "marker1": [("disajikan dalam", "(")],
+    "marker2": [("menguat", "catatan")],
+    "marker3": [("Risiko tingkat suku bunga", "suku bunga mengambang")],
+}
+
+ADRO_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("melemah/menguat", "Risiko harga")],
+    "marker3": [("suku bunga atas pinjaman", "Risiko kredit")],
+}
+
+UNTR_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("-", "-")],
+    "marker3": [("risiko tingkat suku bunga (lanjutan)", "Risiko pasar (lanjutan)")],
+}
+
+JSMR_marker_config = {
+    "marker1": [("disajikan dalam", ",")],
+    "marker2": [("-", "-")],
+    "marker3": [("Risiko Suku Bunga d. Interest Rate Risk", "e. Nilai Wajar")],
+}
+
+ICBP_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("Risiko mata uang asing b. Foreign currencies risk", "exposures")],
+    "marker3": [("Risiko tingkat suku bunga Grup", "kenaikan/ penurunan")],
+}
+
+MEDC_marker_config = {
+    "marker1": [("disajikan dalam", ",")],
+    "marker2": [("Entitas anak tertentu Grup memiliki mata", "liabilities")],
+    "marker3": [("tingkat suku bunga pinjaman", "Grup terekspos pada LIBOR USD")],
+}
+
+ISAT_marker_config = {
+    "marker1": [("dinyatakan dalam", ",")],
+    "marker2": [("laba konsolidasian Grup", "Risiko harga ekuitas")],
+    "marker3": [("Risiko suku bunga (lanjutan) (i) Interest rate risk (continued)", "Risiko nilai tukar mata uang asing")],
+}
+
+GIAA_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("sensitivitas untuk perubahan", "PT GARUDA INDONESIA (PERSERO) Tbk")],
+    "marker3": [("Risiko tingkat suku bunga Grup", "Risiko kredit")],
+}
+
+PGAS_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("Analisis sensitivitas untuk risiko mata uang", "PT PERUSAHAAN GAS NEGARA TBK")],
+    "marker3": [("Analisis sensitivitas untuk risiko suku bunga", "PT PERUSAHAAN GAS NEGARA TBK")],
+}
