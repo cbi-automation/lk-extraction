@@ -1,235 +1,227 @@
-# Konfigurasi marker: marker_name -> (start_marker, end_marker)
-adro_marker_config = {
+EXCL_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("melemah/menguat", "kerugian/keuntungan")],
+    "marker3": [("-", "-")],
+}
+
+TPIA_marker_config = {
+    "marker1": [("-", "-")],
+    "marker2": [("Analisis sensitivitas Grup", "sensitivitas yang digunakan")],
+    "marker3": [("Analisis sensitivitas suku bunga", "Kontrak swap suku bunga")],
+}
+
+SMGR_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("aset moneter bersih", "keuntungan/kerugian")],
+    "marker3": [("Risiko tingkat suku bunga", "Risiko kredit")],
+}
+
+MDKA_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("Tabel berikut menunjukkan sensitivitas atas", "Dampak dari perubahan nilai")],
+    "marker3": [("Risiko tingkat suku bunga Grup", "Estimasi nilai")],
+}
+
+TOWR_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("perubahan tingkat pertukaran", "Risiko mata uang asing")],
+    "marker3": [("Risiko tingkat suku bunga (lanjutan)", "Risiko kredit")],
+}
+
+BHIT_marker_config = {
+    "marker1": [("(Angka dalam tabel dinyatakan dalam", ")")],
+    "marker2": [("Manajemen berpendapat", "Analisis sensitivitas suku bunga")],
+    "marker3": [("Analisis sensitivitas suku bunga", "Grup terhadap")],
+}
+
+BSDE_marker_config = {
+    "marker1": [("(Angka-angka Disajikan dalam", ",")],
+    "marker2": [("Risiko nilai tukar adalah risiko usaha", "Risiko Kredit")],
+    "marker3": [("untuk meminimalkan risiko suku bunga", "risiko mata uang asing")],
+}
+
+WIKA_marker_config = {
     "marker1": [("disajikan dalam", ",")],
-    "marker2": [("jika nilai tukar", "kerugian/keuntungan translasi")]
+    "marker2": [("analisis sensitivitas mata uang asing", "respectively.PT")],
+    "marker3": [("Analisis sensitivitas suku bunga", "Manajemen risiko kredit")],
 }
 
-adro_marker_config = {
+IMAS_marker_config = {
     "marker1": [("disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", "kerugian/keuntungan translasi")]
+    "marker2": [("meningkat atau menurun", "Risiko harga ekuitas")],
+    "marker3": [("a. Risiko tingkat bunga a. Interest rate risk", "Risiko nilai tukar mata")],
 }
 
-adro_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("jika nilai tukar", "kerugian/keuntungan translasi")]
+TKIM_marker_config = {
+    "marker1": [("(Saldo dalam tabel disajikan dalam", "(")],
+    "marker2": [("melemah/menguat", "Risiko tingkat suku bunga")],
+    "marker3": [("tinggi/rendah", "yang terutama")],
 }
 
-bhit_marker_config = {
-    "marker1": [("dinyatakan dalam", ")")],
-    "marker2": [("Analisis sensitivitas mata uang asing", "Dampak")]
+PTPP_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("-", "-")],
+    "marker3": [("-", "-")],
 }
 
-bsde_marker_config = {
-    "marker1": [("disajikan dalam", "")],
-    "marker2": [("melemah/menguat", "respectively")]
+HMSP_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("menguat/melemah", "liabilities")],
+    "marker3": [("Grup terekspos risiko tingkat suku bunga", "Risiko kredit")],
 }
 
-ctra_marker_config = {
-    "marker1": [("Dinyatakan dalam", ",")],
-    "marker2": [("melemah/menguat", " terutama")]
-}
-
-dssa_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", "Risiko Kredit")]
-}
-
-excl_marker_config = {
-    "marker1": [("dinyatakan dalam", ",")],
-    "marker2": [("melemah/menguat", "kerugian/keuntungan")]
-}
-
-hmsp_marker_config = {
-    "marker1": [("dinyatakan dalam", ",")],
-    "marker2": [("menguat/melemah", "higher/lower")]
-}
-
-icbp_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("menguat", "terutama")]
-}
-
-imas_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("meningkat atau menurun", "Risiko harga ekuitas")]
-}
-
-inco_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", " VALE INDONESIA")]
-}
-
-indf_marker_config = {
-    "marker1": [("dinyatakan dalam", ",")],
-    "marker2": [("melemah", "keuntungan/kerugian")]
-}
-
-indy_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", " sensitivity rates")]
-}
-
-inkp_marker_config = {
-    "marker1": [("disajikan dalam", "(")],
-    "marker2": [("menguat", "catatan")]
-}
-
-isat_marker_config = {
-    "marker1": [("dinyatakan dalam", ",")],
-    "marker2": [("laba konsolidasian Grup", "Risiko harga ekuitas")]
-}
-
-jsmr_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker3": [("jika nilai tukar", "kerugian/keuntungan translasi")]
-}
-
-lpkr_marker_config = {
+LPKR_marker_config = {
     "marker1": [("(Dalam", ",")],
-    "marker2": [("Risiko nilai tukar mata uang adalah", "LIPPO KARAWACI")]
+    "marker2": [("Analisa Sensitivitas", "harga ekuitas telah")],
+    "marker3": [("-", "-")],
 }
 
-medc_marker_config = {
+DSSA_marker_config = {
+    "marker1": [("(Angka-angka Disajikan dalam", ",")],
+    "marker2": [("melemah/menguat", "Risiko Kredit")],
+    "marker3": [("Risiko suku bunga adalah risiko dimana", "Risiko nilai tukar mata")],
+}
+
+INDY_marker_config = {
     "marker1": [("disajikan dalam", ",")],
-    "marker2": [("tingkat suku bunga pinjaman", "Grup terekspos")]
+    "marker2": [("Analisis sensitivitas mata uang asing", "tingkat")],
+    "marker3": [("tinggi/rendah", "eksposur Grup")],
 }
 
-smgr_marker_config = {
+BYAN_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("melemah/menguat", "terutama")],
+    "marker3": [("meningkat/menurun", "sebagian besar")],
+}
+
+INCO_marker_config = {
     "marker1": [("disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", "diakibatkan")]
+    "marker2": [("melemah/menguat", "Apabila")],
+    "marker3": [("liabilitas dalam mata uang", "nilai penuh")],
 }
 
-tkim_marker_config = {
-    "marker1": [("disajikan dalam", "(")],
-    "marker2": [("Risiko nilai tukar mata uang", "increase of approximate")]
+TBIG_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("pengganti atas aktivitas lindung", "terutama yang timbul")],
+    "marker3": [("Profil liabilitas jangka panjang", "Risiko kredit")],
 }
 
-tlkm_marker = {
-    "marker1": [("Angka dalam tabel disajikan dalam", ",")],
-    "marker2": [("Risiko kenaikan nilai tukar mata uang asing", "Risiko harga pasar")]
+CTRA_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("keuangan konsolidasian tahun", "liabilitas")],
+    "marker3": [("-", "-")],
 }
 
-towr_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("bunga mengambang", "Risiko mata uang asing")]
+FREN_marker_config = {
+    "marker1": [("(Angka-angka Disajikan dalam", ",")],
+    "marker2": [("melemah/menguat", "keuntungan/kerugian")],
+    "marker3": [("meningkat/menurun", "akibat beban bunga")],
 }
 
-tpia_marker_config = {
-    "marker1": [("disajikan dalam mata uang", "financial")],
-    "marker2": [("Analisis sensitivitas Grup", "turun/naik")]
+EMTK_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("Analisis Sensitivitas Untuk Risiko", "miliar")],
+    "marker3": [("kemungkinan perubahan tingkat", "Risiko Mata Uang Asing")],
 }
 
-wika_marker_config = {
-    "marker1": [("disajikan dalam", ",")],
-    "marker2": [("Analisis sensitivitas mata uang asing", "respectively.PT")]
+KRAS_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("terhadap mata uang", "Risiko Suku Bunga")],
+    "marker3": [("perubahan tingkat bunga", "Nilai Wajar Instrumen Keuangan")],
 }
 
-tbig_marker_config = {
-    "marker2": [("pengganti atas aktivitas lindung", "terutama yang timbul")]
+CPIN_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("dampak terhadap laba", "risiko harga komoditas")],
+    "marker3": [("Increase/ pajak penghasilan/", "PT CHAROEN")],
 }
 
-fren_marker_config = {
-    "marker2": [("melemah/menguat", "keuntungan/kerugian")]
+ANTM_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("menguat/melemah", "terutama")],
+    "marker3": [("naik/turun", "Eksposur pinjaman")],
 }
 
-ctra_marker_config = {
-    "marker2": [("keuangan konsolidasian tahun", "Jika liabilitas")]
+SMAR_marker_config = {
+    "marker1": [("-", "-")],
+    "marker2": [("melemah/menguat", "bersih Grup")],
+    "marker3": [("Apabila suku bunga atas pinjaman", "terutama sebagai")],
 }
 
-dssa_marker_config = {
-    "marker2": [("", "")]
+PTBA_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("melemah/menguat", "keuntungan/kerugian")],
+    "marker3": [("-", "-")],
 }
 
-emtk_marker_config = {
-    "marker2": [("Analisis Sensitivitas Untuk Risiko", "miliar")]
+ADHI_marker_config = {
+    "marker1": [("(Disajikan dalam", ")")],
+    "marker2": [("-", "-")],
+    "marker3": [("Risiko tingkat bunga arus kas adalah", "Risiko Likuidita")],
 }
 
-kras_marker_config = {
-    "marker2": [("terhadap mata uang", "Risiko Suku Bunga")]
+PANI_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("-", "-")],
+    "marker3": [("Grup terekspos risiko tingkat suku bunga", "Risiko kredi")],
 }
 
-cpin_marker_config = {
-    "marker2": [("dampak terhadap laba", "risiko harga komoditas")]
+HRUM_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("melemah/menguat", "uang asing")],
+    "marker3": [("-", "-")],
 }
 
-antm_marker_config = {
-    "marker2": [("menguat/melemah", "terutama")]
+AMRT_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("perubahan tingkat suku bunga", "Risiko Mata Uang")],
+    "marker3": [("perubahan tingkat suku bunga", "Risiko Mata Uang Asing")],
 }
 
-smar_marker_config = {
-    "marker2": [("melemah/menguat", "bersih Grup")]
+BMTR_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("non-fungsional lainnya", "Weakness")],
+    "marker3": [("Analisis sensitivitas suku bunga", "Grup")],
 }
 
-ptba_marker_config = {
-    "marker2": [("melemah/menguat", "keuntungan/kerugian")]
+SIMP_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("perubahan nilai tukar", "Risiko Harga Komoditas")],
+    "marker3": [("Grup tidak mempunyai kebijakan", "Floating interest rate")],
 }
 
-adhi_marker_config = {
-    "marker2": [("", "")]
+JPFA_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("melemah/menguat", "terutama sebagai")],
+    "marker3": [("tinggi/lebih", "terutama akibat")],
 }
 
-pani_marker_config = {
-    "marker2": [("", "")]
+ITMG_marker_config = {
+    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker2": [("Grup terekspos risiko", "terutama")],
+    "marker3": [("Jika suku bunga pinjaman", "Risiko kredit")],
 }
 
-hrum_marker_config = {
-    "marker2": [("melemah/menguat", "uang asing")]
+KPIG_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("Perusahaan atas kemungkinan", "Risiko likuiditas")],
+    "marker3": [("-", "-")],
 }
 
-amrt_marker_config = {
-    "marker2": [("perubahan tingkat suku bunga", "Risiko Mata Uang")]
+PWON_marker_config = {
+    "marker1": [("-", "-")],
+    "marker2": [("terekspos terhadap Dolar", "Analisis sensitivitas")],
+    "marker3": [("-", "-")],
 }
 
-bmtr_marker_config = {
-    "marker2": [("non-fungsional lainnya", "Weakness")]
+AKRA_marker_config = {
+    "marker1": [("(angka Disajikan dalam", ",")],
+    "marker2": [("Risiko nilai tukar mata uang asing (lanjutan)", "language")],
+    "marker3": [("fluktuasi suku bunga pasar", "Rupiah")],
 }
 
-simp_marker_config = {
-    "marker2": [("perubahan nilai tukar", "Risiko Harga Komoditas")]
+KLBF_marker_config = {
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("melemah/menguat", "miliar")],
+    "marker3": [("Risiko tingkat suku bunga", "miliar")],
 }
-
-jpfa_marker_config = {
-    "marker2": [("melemah/menguat", "terutama sebagai")]
-}
-
-itmg_marker_config = {
-    "marker2": [("Grup terekspos risiko", "terutama")]
-}
-
-kpig_marker_config = {
-    "marker2": [("Perusahaan atas kemungkinan", "Risiko likuiditas")]
-}
-
-pwon_marker_config = {
-    "marker2": [("terekspos terhadap Dolar", "Analisis sensitivitas")]
-}
-
-abmm_marker_config = {
-    "marker2": [("", "")]
-}
-
-smra_marker_config = {
-    "marker2": [("", "")]
-}
-
-akra_marker_config = {
-    "marker2": [("Risiko nilai tukar mata uang asing (lanjutan)", "language")]
-}
-
-aali_marker_config = {
-    "marker2": [("", "")]
-}
-
-intp_marker_config = {
-    "marker2": [("", "")]
-}
-
-klbf_marker_config = {
-    "marker2": [("melemah/menguat", "miliar")]
-}
-
-byan_marker_config = {
-    "marker2": [("melemah/menguat", "terutama")]
-}
-
-
