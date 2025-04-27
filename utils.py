@@ -61,24 +61,6 @@ marker_to_function = {
     "marker2": "find_nilai_tukar"
 }
 
-def create_emiten_instance(emiten_name: str) -> Emiten:
-    cls = globals().get(emiten_name)
-    if cls and issubclass(cls, Emiten):
-        return cls()
-    else:
-        print(f"[⚠️] Emiten '{emiten_name}' tidak ditemukan atau bukan turunan Emiten. Gunakan Emiten standar.")
-        return Emiten()
-
-def process_all_markers(text, kuartal, emiten):
-    company = create_emiten_instance(emiten)
-    company.perusahaan = emiten
-    company.kuartal = kuartal
-    
-    print(f"[DEBUG] hasil find_satuan untuk {company.kuartal}")
-    company.find_satuan(text,kuartal)
-    company.find_nilai_tukar(text,kuartal)
-    return company
-
 # Fungsi untuk mengekstrak teks dari PDF
 def extract_text(file_path):
     text = ""
