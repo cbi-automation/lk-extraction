@@ -658,3 +658,15 @@ MTDL_marker_config = {
     "marker2": [("Risiko nilai tukar mata uang asing", "Risiko kredit")],
     "marker3": [("-", "-")],
 }
+
+ELSA_marker_config = {
+    "marker1": [("-", "-")],
+    "marker2": [("Apabila aset dan liabilitas moneter", "pembelian")],
+    "marker3": [("Dampak perubahan tingkat suku bunga", "Risiko mata uang asing")],
+}
+
+SGRO_marker_config = {
+    "marker1": [("-", "-")],
+    "marker2": [("menghadapi risiko nilai tukar", "Risiko kredit")],
+    "marker3": [("Risiko tingkat suku bunga Grup terutama", "Risiko mata uang asing")],
+}
