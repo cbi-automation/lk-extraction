@@ -215,7 +215,7 @@ PWON_marker_config = {
 }
 
 AKRA_marker_config = {
-    "marker1": [("(angka Disajikan dalam", ",")],
+    "marker1": [("disajikan dalam", ",")],
     "marker2": [("Risiko nilai tukar mata uang asing (lanjutan)", "language")],
     "marker3": [("fluktuasi suku bunga pasar", "Rupiah")],
 }
@@ -313,7 +313,7 @@ AKRA_marker_config = {
 
 AALI_marker_config = {
     "marker1": [("(Dinyatakan dalam", ",")],
-    "marker2": [("Saldo utama atas aset dan liabilitas moneter dalam", "KOMITMEN DAN LAINNYA")],
+    "marker2": [("melemah", "Manajemen")],
     "marker3": [("-", "-")],
 }
 
@@ -385,14 +385,14 @@ ERAA_marker_config = {
 
 GJTL_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("Risiko nilai tukar mata uang asing", "Risiko tingkat suku bunga")],
-    "marker3": [("Risiko tingkat suku bunga", "Risiko kredit")],
+    "marker2": [("Analisis sensitivitas mata uang asing", "Manajemen risiko tingkat bunga")],
+    "marker3": [("Manajemen risiko tingkat bunga", "risiko likuiditas")],
 }
 
 PPRO_marker_config = {
-    "marker1": [("(Dinyatakan dalam", ",")],
-    "marker2": [("Tabel berikut ini menunjukkan sensitivitas Perseroan", "Risiko tingkat suku bunga")],
-    "marker3": [("Tabel berikut ini menunjukkan sensitivitas Perseroan terhadap perubahan tingkat suku bunga", "Risiko kredit")],
+    "marker1": [("(Disajikan dalam", ",")],
+    "marker2": [("-", "-")],
+    "marker3": [("Risiko arus kas tingkat bunga adalah", "risiko kredit")],
 }
 
 ENRG_marker_config = {
@@ -408,14 +408,14 @@ ASRI_marker_config = {
 }
 
 CMNP_marker_config = {
-    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker1": [("(Disajikan dalam", ",")],
     "marker2": [("Transaksi dan saldo dalam mata uang asing", "Transaksi dengan pihak-pihak berelasi")],
     "marker3": [("-", "-")],
 }
 
 SMCB_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("Manajemen risiko mata uang asing", "selama satu tahun")],
+    "marker2": [("Manajemen risiko mata uang asing", "Manajemen risiko harga")],
     "marker3": [("Jika suku bunga telah", "mengambangnya")],
 }
 
@@ -450,8 +450,8 @@ CENT_marker_config = {
 }
 
 GEMS_marker_config = {
-    "marker1": [("(Angka-angka Disajikan dalam", ",")],
-    "marker2": [("Grup diungkapkan pada Catatan 2c", "")],
+    "marker1": [("Disajikan dalam", ",")],
+    "marker2": [("Grup diungkapkan pada Catatan 2c", "Risiko Kredit")],
     "marker3": [("-", "-")],
 }
 
