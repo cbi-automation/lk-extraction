@@ -384,7 +384,7 @@ ERAA_marker_config = {
 }
 
 GJTL_marker_config = {
-    "marker1": [("(Disajikan dalam", ",")],
+    "marker1": [("-", "-")],
     "marker2": [("Analisis sensitivitas mata uang asing", "Manajemen risiko tingkat bunga")],
     "marker3": [("Manajemen risiko tingkat bunga", "risiko likuiditas")],
 }
@@ -451,7 +451,7 @@ CENT_marker_config = {
 
 GEMS_marker_config = {
     "marker1": [("Disajikan dalam", ",")],
-    "marker2": [("Grup diungkapkan pada Catatan 2c", "Risiko Kredit")],
+    "marker2": [("melemah/menguat", "Risiko Kredit")],
     "marker3": [("-", "-")],
 }
 
