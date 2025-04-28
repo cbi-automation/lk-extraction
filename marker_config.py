@@ -470,7 +470,7 @@ UNVR_marker_config = {
 BRMS_marker_config = {
     "marker1": [("(Dalam", ",")],
     "marker2": [("Tabel berikut ini menunjukkan sensitivitas", "Risiko Kredit")],
-    "marker3": [("Risiko Tingkat Bunga a. Interest Rate Risk", "Risiko Gaji")],
+    "marker3": [("Risiko Tingkat Bunga a. Interest Rate Risk", "Modal Saham")],
 }
 
 CMNT_marker_config = {
@@ -499,7 +499,7 @@ DUTI_marker_config = {
 
 TOBA_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("Risiko nilai tukar mata uang asing (lanjutan)", "Risiko harga")],
+    "marker2": [("Risiko nilai tukar mata uang asing adalah", "Risiko harga")],
     "marker3": [("Dampak fluktuasi suku bunga", "Risiko kredit")],
 }
 
