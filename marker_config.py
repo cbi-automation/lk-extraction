@@ -126,7 +126,7 @@ EMTK_marker_config = {
 
 KRAS_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("terhadap mata uang", "Risiko Suku Bunga")],
+    "marker2": [("terhadap mata uang", "Risiko")],
     "marker3": [("perubahan tingkat bunga", "Nilai Wajar Instrumen Keuangan")],
 }
 
@@ -168,7 +168,7 @@ PANI_marker_config = {
 
 HRUM_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", "uang asing")],
+    "marker2": [("melemah/menguat", "Manajemen berkeyakinan bahwa")],
     "marker3": [("-", "-")],
 }
 
