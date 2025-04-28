@@ -25,7 +25,7 @@ MDKA_marker_config = {
 TOWR_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
     "marker2": [("perubahan tingkat pertukaran", "Risiko kredit")],
-    "marker3": [("Risiko tingkat suku bunga (lanjutan)", "Risiko mata uang asing")],
+    "marker3": [("Risiko tingkat suku bunga adalah", "Risiko mata uang asing")],
 }
 
 BHIT_marker_config = {
@@ -144,8 +144,8 @@ ANTM_marker_config = {
 
 SMAR_marker_config = {
     "marker1": [("-", "-")],
-    "marker2": [("melemah/menguat", "bersih Grup")],
-    "marker3": [("Apabila suku bunga atas pinjaman", "terutama sebagai")],
+    "marker2": [("melemah/menguat", "Risiko Harga")],
+    "marker3": [("Apabila suku bunga atas pinjaman", "Risiko Nilai Tukar")],
 }
 
 PTBA_marker_config = {
