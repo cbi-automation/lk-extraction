@@ -266,7 +266,7 @@ JSMR_marker_config = {
 ICBP_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
     "marker2": [("Risiko mata uang asing b. Foreign currencies risk", "exposures")],
-    "marker3": [("Risiko tingkat suku bunga Grup", "kenaikan/ penurunan")],
+    "marker3": [("timbul dari pinjaman untuk", "Risiko mata uang asing")],
 }
 
 MEDC_marker_config = {
