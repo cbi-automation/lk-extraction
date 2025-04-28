@@ -548,7 +548,7 @@ PSAB_marker_config = {
 KIJA_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
     "marker2": [("Tabel di bawah ini menunjukan sensitivitas", "Risiko kredit")],
-    "marker3": [("Tabel berikut menunjukkan sensitivitas terhadap", "MANAGEMENT PERMODALAN")],
+    "marker3": [("Tabel berikut menunjukkan sensitivitas terhadap", "MANAJEMEN PERMODALAN")],
 }
 
 TINS_marker_config = {
@@ -594,7 +594,7 @@ PLIN_marker_config = {
 }
 
 MCOL_marker_config = {
-    "marker1": [("(Disajikan dalam", ",")],
+    "marker1": [("kan dalam", ",")],
     "marker2": [("Mata uang pelaporan Grup adalah", "Risiko kredit")],
     "marker3": [("Risiko tingkat suku bunga Grup", "Mata uang pelaporan Grup")],
 }
