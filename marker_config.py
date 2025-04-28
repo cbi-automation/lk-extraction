@@ -102,12 +102,12 @@ INCO_marker_config = {
 
 TBIG_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("pengganti atas aktivitas lindung", "terutama yang timbul")],
+    "marker2": [("pengganti atas aktivitas lindung", "MANAJEMEN RISIKO KEUANGAN")],
     "marker3": [("Profil liabilitas jangka panjang", "Risiko kredit")],
 }
 
 CTRA_marker_config = {
-    "marker1": [("(Dinyatakan dalam", ",")],
+    "marker1": [("(Disajikan dalam", ",")],
     "marker2": [("keuangan konsolidasian tahun", "liabilitas")],
     "marker3": [("-", "-")],
 }
@@ -235,7 +235,7 @@ TLKM_marker_config = {
 
 INDF_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("melemah", "keuntungan/kerugian")],
+    "marker2": [("melemah", "Risiko kredit")],
     "marker3": [("-", "-")],
 }
 
