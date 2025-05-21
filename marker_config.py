@@ -12,13 +12,13 @@ TPIA_marker_config = {
 
 SMGR_marker_config = {
     "marker1": [("(Dinyatakan dalam", ",")],
-    "marker2": [("aset moneter bersih", "keuntungan/kerugian")],
+    "marker2": [("aset moneter bersih", "risiko pasar")],
     "marker3": [("Risiko tingkat suku bunga", "Risiko kredit")],
 }
 
 MDKA_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("Tabel berikut menunjukkan sensitivitas atas", "Dampak dari perubahan nilai")],
+    "marker2": [("sensitivitas atas", "Risiko komoditi")],
     "marker3": [("Risiko tingkat suku bunga Grup", "Estimasi nilai")],
 }
 
