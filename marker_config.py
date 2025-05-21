@@ -265,7 +265,7 @@ JSMR_marker_config = {
 
 ICBP_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("menguat", "Risiko kredita")],
+    "marker2": [("menguat", "Risiko kredit")],
     "marker3": [("timbul dari pinjaman untuk", "Risiko mata uang asing")],
 }
 
