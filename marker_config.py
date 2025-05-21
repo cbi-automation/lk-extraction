@@ -241,7 +241,7 @@ INDF_marker_config = {
 
 INKP_marker_config = {
     "marker1": [("disajikan dalam", "(")],
-    "marker2": [("menguat", "catatan")],
+    "marker2": [("menguat", "Risiko tingkat suku bunga")],
     "marker3": [("Risiko tingkat suku bunga", "suku bunga mengambang")],
 }
 
@@ -265,7 +265,7 @@ JSMR_marker_config = {
 
 ICBP_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("Risiko mata uang asing b. Foreign currencies risk", "exposures")],
+    "marker2": [("menguat", "Risiko kredita")],
     "marker3": [("timbul dari pinjaman untuk", "Risiko mata uang asing")],
 }
 
