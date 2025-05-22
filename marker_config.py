@@ -18,7 +18,7 @@ SMGR_marker_config = {
 
 MDKA_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("sensitivitas atas", "Risiko komoditi")],
+    "marker2": [("Kenaikan/(penurunan)", "Risiko komoditi")],
     "marker3": [("Risiko tingkat suku bunga Grup", "Estimasi nilai")],
 }
 
