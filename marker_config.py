@@ -12,7 +12,7 @@ TPIA_marker_config = {
 
 SMGR_marker_config = {
     "marker1": [("(Dinyatakan dalam", ",")],
-    "marker2": [("aset moneter bersih", "risiko pasar")],
+    "marker2": [("melemah/menguat", "risiko pasar")],
     "marker3": [("Risiko tingkat suku bunga", "Risiko kredit")],
 }
 
