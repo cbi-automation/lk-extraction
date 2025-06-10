@@ -198,7 +198,7 @@ JPFA_marker_config = {
 
 ITMG_marker_config = {
     "marker1": [("(Dinyatakan dalam", ",")],
-    "marker2": [("Grup terekspos risiko", "terutama")],
+    "marker2": [("Grup terekspos risiko", "risiko harga")],
     "marker3": [("Jika suku bunga pinjaman", "Risiko kredit")],
 }
 
