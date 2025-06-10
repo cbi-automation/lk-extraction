@@ -192,7 +192,7 @@ SIMP_marker_config = {
 
 JPFA_marker_config = {
     "marker1": [("(Disajikan dalam", ",")],
-    "marker2": [("melemah/menguat", "terutama sebagai")],
+    "marker2": [("melemah/menguat", "Risiko Kredit")],
     "marker3": [("tinggi/lebih", "terutama akibat")],
 }
 
